@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKADEMIE — Movement Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand">MOVE<span>MENT</span></a>
+        
+        <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <a href="kurse.html">Akademie</a>
+            <a href="uber-uns.html">Manifest</a>
+            <a href="karriere.html">Karriere</a>
+            <a href="contacts.html" class="btn-nav">Jetzt bewerben</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+    <section class="hero-full hero-subpage">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1 class="hero-title">BILDUNG 2030</h1>
+                <p class="hero-subtext">Erfahren Sie mehr über unsere Ausbildungsprogramme und wählen Sie Ihren Weg in den Beruf.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="course-detail-block reveal">
+                <div class="course-info">
+                    <span class="course-price">€300</span>
+                    <h2>01 / CORE FOUNDATION</h2>
+                    <p>Dieses Basis-Intensivtraining ist für diejenigen konzipiert, die fundiertes Wissen ohne unnötiges "Bla Bla" suchen. Das Programm umfasst den gesamten Zyklus der Arbeitsplatzvorbereitung, die Instrumentensterilisation nach europäischen Protokollen und das Studium der grundlegenden Hundeanatomie. Sie lernen den richtigen Umgang mit der Schere, die Geometrie des Tierkörpers und Hygieneverfahren, die die Grundlage jeder professionellen Pflege bilden. Ein idealer Start für Assistenten und alle, die herausfinden möchten, ob sie bereit sind, ihr Leben professionell der Grooming-Kunst zu widmen.</p>
+                    <button class="btn-movement open-popup" data-course="Core Foundation">JETZT ANMELDEN</button>
+                </div>
+                <div class="course-gallery">
+                    <img src="images/kurse2.jpg" alt="Basis Kurs">
+                </div>
+            </div>
+
+            <div class="course-detail-block reveal">
+                <div class="course-info">
+                    <span class="course-price">€800</span>
+                    <h2>02 / MASTER STYLIST</h2>
+                    <p>Ein Profikurs für Fortgeschrittene, der den Fokus auf "Freihand-Techniken" und die Arbeit mit anspruchsvollen Felltypen legt. Sie beherrschen die beliebtesten kommerziellen Schnitte (Yorkshire Terrier, Maltipoo, Pudel) und tauchen in die Welt von Asian Fusion ein — ein Stil, der derzeit den europäischen Markt dominiert. Wir analysieren detailliert die Verwendung von Premium-Kosmetik und lehren Sie, Looks zu kreieren, die Kunden immer wieder zu Ihnen zurückkehren lassen. Das Programm umfasst 20 Stunden intensive Praxis an realen Modellen unter Aufsicht unserer Top-Groomer.</p>
+                    <button class="btn-movement open-popup" data-course="Master Stylist">JETZT ANMELDEN</button>
+                </div>
+                <div class="course-gallery">
+                    <img src="images/kurse3.jpg" alt="Pro Kurs">
+                </div>
+            </div>
+
+            <div class="course-detail-block reveal">
+                <div class="course-info">
+                    <span class="course-price">€1500</span>
+                    <h2>03 / BUSINESS ELITE</h2>
+                    <p>Dies ist ein einzigartiges Transformationsprogramm, das höchste Grooming-Meisterschaft mit strategischem Management verbindet. Neben exklusiven Ausstellungstechniken und Ozontherapie erhalten Sie das volle Wissen für den Start Ihres eigenen Unternehmens in Deutschland. Wir behandeln das Steuersystem, Anforderungen des Veterinäramtes, Algorithmen für den Gerätekauf und Marketingstrategien zur Gewinnung von Premium-Kunden. Diese Ausbildung ist für diejenigen, die nicht nur als Master arbeiten, sondern ihre eigene Marke aufbauen und Teams in der Welt der Haustier-High-Fashion leiten wollen.</p>
+                    <button class="btn-movement open-popup" data-course="Business Elite">JETZT ANMELDEN</button>
+                </div>
+                <div class="course-gallery">
+                    <img src="images/kurse4.jpg" alt="BUSINESS ELITE">
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<div class="popup-overlay" id="contactPopup">
+    <div class="popup-content">
+        <button class="close-popup">&times;</button>
+        <h3 id="popupTitle">KURS-REGISTRIERUNG</h3>
+        <p class="muted">Hinterlassen Sie Ihre Daten, wir kontaktieren Sie innerhalb einer Stunde.</p>
+        <form id="popupForm">
+            <input type="hidden" id="selectedCourse" name="course">
+            <input type="text" placeholder="IHR NAME" required class="input-neo">
+            <input type="tel" placeholder="TELEFONNUMMER" required class="input-neo">
+            <button type="submit" class="btn-movement full">ABSENDEN</button>
+        </form>
+    </div>
+</div>
+
+<div class="popup-overlay" id="successPopup">
+    <div class="popup-content success-content">
+        <button class="close-success">&times;</button>
+        <div class="success-icon">✓</div>
+        <h2>VIELEN DANK!</h2>
+        <p>Ihre Anfrage wurde entgegengenommen. Wir werden Sie in Kürze kontaktieren, um Details zu besprechen.</p>
+        <button class="btn-movement close-success-btn">VERSTANDEN</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

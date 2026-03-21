@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONTAKT — Movement Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand">MOVE<span>MENT</span></a>
+        
+        <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <a href="kurse.html">Akademie</a>
+            <a href="uber-uns.html">Manifest</a>
+            <a href="karriere.html">Karriere</a>
+            <a href="contacts.html" class="btn-nav">Jetzt bewerben</a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="contacts-page">
+    <section class="section">
+        <div class="container grid-contacts">
+            
+            <div class="contacts-info reveal">
+                <span class="eyebrow">READY TO MOVE?</span>
+                <h1 class="title-huge">KONTAKTIEREN<br>SIE UNS</h1>
+                
+                <div class="contact-details">
+                    <div class="detail-item full-width">
+                        <label>STANDORT</label>
+                        <p>Hanauer Landstraße 190,<br>60314 Frankfurt am Main, Deutschland</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <label>DIREKTER DRAHT</label>
+                        <p><a href="tel:+491760000000">+49 176 597 11 25</a></p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <label>EMAIL</label>
+                        <p><a href="mailto:hello@the2030movement.com">info@the2030movement.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts-form-container reveal">
+                <div class="form-glass">
+                    <form action="#" id="mainContactForm">
+                        <div class="input-group">
+                            <label>WIE HEISSEN SIE?</label>
+                            <input type="text" placeholder="VOR- UND NACHNAME" required class="input-neo">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>IHRE TELEFONNUMMER</label>
+                            <input type="tel" placeholder="+49 ___ ___ __ __" required class="input-neo">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>WAS INTERESSIERT SIE?</label>
+                            <select class="input-neo select-neo">
+                                <option value="education">AUSBILDUNG & KURSE</option>
+                                <option value="career">KOOPERATION & KARRIERE</option>
+                                <option value="salon">SALON-DIENSTLEISTUNGEN</option>
+                                <option value="other">SONSTIGE ANFRAGE</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>NACHRICHT (OPTIONAL)</label>
+                            <textarea placeholder="IHRE NACHRICHT..." rows="3" class="input-neo"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-movement full">ANFRAGE SENDEN</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner-grid">
+        <div class="brand">MOVE<span>MENT</span></div>
+        <div class="footer-copy">© 2026 MOVEMENT ACADEMY FRANKFURT</div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<div class="popup-overlay" id="successPopup">
+    <div class="popup-content success-content">
+        <button class="close-success">&times;</button>
+        <div class="success-icon">✓</div>
+        <h2>VIELEN DANK!</h2>
+        <p>Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen, um die Details zu besprechen.</p>
+        <button class="btn-movement close-success-btn">VERSTANDEN</button>
+    </div>
+</div>
+</body>
+</html>
