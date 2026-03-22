@@ -34,7 +34,7 @@
         <div class="hero-overlay">
             <div class="container">
                 <h1 class="hero-title">BILDUNG 2030</h1>
-                <p class="hero-subtext">Erfahren Sie mehr über unsere Ausbildungsprogramme und wählen Sie Ihren Weg in den Beruf.</p>
+                <p class="hero-subtext">Erfahren Sie mehr über unsere Ausbildungsprogramme und wählen Sie den Weg, der am besten zu Ihrem aktuellen Niveau und Ihren beruflichen Zielen passt.</p>
             </div>
         </div>
     </section>
@@ -46,7 +46,7 @@
                 <div class="course-info">
                     <span class="course-price">€300</span>
                     <h2>01 / CORE FOUNDATION</h2>
-                    <p>Dieses Basis-Intensivtraining ist für diejenigen konzipiert, die fundiertes Wissen ohne unnötiges "Bla Bla" suchen. Das Programm umfasst den gesamten Zyklus der Arbeitsplatzvorbereitung, die Instrumentensterilisation nach europäischen Protokollen und das Studium der grundlegenden Hundeanatomie. Sie lernen den richtigen Umgang mit der Schere, die Geometrie des Tierkörpers und Hygieneverfahren, die die Grundlage jeder professionellen Pflege bilden. Ein idealer Start für Assistenten und alle, die herausfinden möchten, ob sie bereit sind, ihr Leben professionell der Grooming-Kunst zu widmen.</p>
+                    <p>Dieses Basis-Intensivtraining richtet sich an Einsteiger, die eine klare und praxisnahe Einführung in das Grooming suchen. Das Programm umfasst die Vorbereitung des Arbeitsplatzes, grundlegende Hygieneschritte, den sorgfältigen Umgang mit Instrumenten sowie wichtige Grundlagen zur Anatomie und Fellstruktur des Hundes. Sie lernen den sicheren Umgang mit der Schere, ein besseres Verständnis für Proportionen des Tierkörpers und die Abläufe, die zu einer sauberen und ruhigen Arbeitsweise gehören. Der Kurs eignet sich gut für Assistenten, Anfänger und alle, die prüfen möchten, ob sie sich in diesem Berufsfeld weiterentwickeln möchten.</p>
                     <button class="btn-movement open-popup" data-course="Core Foundation">JETZT ANMELDEN</button>
                 </div>
                 <div class="course-gallery">
@@ -58,7 +58,7 @@
                 <div class="course-info">
                     <span class="course-price">€800</span>
                     <h2>02 / MASTER STYLIST</h2>
-                    <p>Ein Profikurs für Fortgeschrittene, der den Fokus auf "Freihand-Techniken" und die Arbeit mit anspruchsvollen Felltypen legt. Sie beherrschen die beliebtesten kommerziellen Schnitte (Yorkshire Terrier, Maltipoo, Pudel) und tauchen in die Welt von Asian Fusion ein — ein Stil, der derzeit den europäischen Markt dominiert. Wir analysieren detailliert die Verwendung von Premium-Kosmetik und lehren Sie, Looks zu kreieren, die Kunden immer wieder zu Ihnen zurückkehren lassen. Das Programm umfasst 20 Stunden intensive Praxis an realen Modellen unter Aufsicht unserer Top-Groomer.</p>
+                    <p>Dieser Aufbaukurs ist für Teilnehmer mit ersten praktischen Erfahrungen konzipiert, die ihre Technik vertiefen und sicherer in der Arbeit mit unterschiedlichen Felltypen werden möchten. Im Fokus stehen präzise Schnittführung, strukturierte Arbeitsabläufe sowie das Training an häufig nachgefragten Rassen wie Yorkshire Terrier, Maltipoo oder Pudel. Darüber hinaus erhalten Sie eine Einführung in moderne Stilrichtungen wie Asian Fusion und beschäftigen sich mit dem passenden Einsatz von Pflege- und Kosmetikprodukten im Salonalltag. Das Programm beinhaltet intensive Praxiseinheiten an realen Modellen unter Begleitung erfahrener Mentoren.</p>
                     <button class="btn-movement open-popup" data-course="Master Stylist">JETZT ANMELDEN</button>
                 </div>
                 <div class="course-gallery">
@@ -70,27 +70,48 @@
                 <div class="course-info">
                     <span class="course-price">€1500</span>
                     <h2>03 / BUSINESS ELITE</h2>
-                    <p>Dies ist ein einzigartiges Transformationsprogramm, das höchste Grooming-Meisterschaft mit strategischem Management verbindet. Neben exklusiven Ausstellungstechniken und Ozontherapie erhalten Sie das volle Wissen für den Start Ihres eigenen Unternehmens in Deutschland. Wir behandeln das Steuersystem, Anforderungen des Veterinäramtes, Algorithmen für den Gerätekauf und Marketingstrategien zur Gewinnung von Premium-Kunden. Diese Ausbildung ist für diejenigen, die nicht nur als Master arbeiten, sondern ihre eigene Marke aufbauen und Teams in der Welt der Haustier-High-Fashion leiten wollen.</p>
+                    <p>Dieses vertiefende Programm verbindet fortgeschrittene Grooming-Themen mit organisatorischen und unternehmerischen Grundlagen. Neben zusätzlichen Praxisinhalten beschäftigen Sie sich mit wichtigen Fragen rund um die Planung eines eigenen Angebots oder die Weiterentwicklung bestehender Arbeitsabläufe. Dazu gehören unter anderem grundlegende Informationen zu organisatorischen Anforderungen in Deutschland, zur Auswahl geeigneter Ausstattung sowie zur Positionierung und Kommunikation eines Salons. Der Kurs richtet sich an Teilnehmer, die ihre fachliche Arbeit ausbauen und sich zugleich strukturierter mit den geschäftlichen Aspekten des Berufs befassen möchten.</p>
                     <button class="btn-movement open-popup" data-course="Business Elite">JETZT ANMELDEN</button>
                 </div>
                 <div class="course-gallery">
-                    <img src="images/kurse4.jpg" alt="BUSINESS ELITE">
+                    <img src="images/kurse4.jpg" alt="Business Kurs">
                 </div>
             </div>
 
         </div>
     </section>
 </main>
-
 <div class="popup-overlay" id="contactPopup">
     <div class="popup-content">
         <button class="close-popup">&times;</button>
         <h3 id="popupTitle">KURS-REGISTRIERUNG</h3>
-        <p class="muted">Hinterlassen Sie Ihre Daten, wir kontaktieren Sie innerhalb einer Stunde.</p>
-        <form id="popupForm">
+        <p class="muted">Hinterlassen Sie Ihre Daten, wir kontaktieren Sie in Kürze, um die Details zu besprechen.</p>
+
+        <form action="submit.php" method="POST" id="popupForm">
+            <input type="hidden" name="form_type" value="course_popup">
             <input type="hidden" id="selectedCourse" name="course">
-            <input type="text" placeholder="IHR NAME" required class="input-neo">
-            <input type="tel" placeholder="TELEFONNUMMER" required class="input-neo">
+
+            <div style="display:none;">
+                <label for="website-popup">Website</label>
+                <input type="text" id="website-popup" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="IHR NAME"
+                required
+                class="input-neo"
+            >
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="TELEFONNUMMER"
+                required
+                class="input-neo"
+            >
+
             <button type="submit" class="btn-movement full">ABSENDEN</button>
         </form>
     </div>
@@ -101,10 +122,11 @@
         <button class="close-success">&times;</button>
         <div class="success-icon">✓</div>
         <h2>VIELEN DANK!</h2>
-        <p>Ihre Anfrage wurde entgegengenommen. Wir werden Sie in Kürze kontaktieren, um Details zu besprechen.</p>
+        <p>Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen, um die Details zu besprechen.</p>
         <button class="btn-movement close-success-btn">VERSTANDEN</button>
     </div>
 </div>
+
 <footer class="footer">
     <div class="container footer-inner">
         <a href="index.html" class="footer-brand">MOVE<span>MENT</span></a>
