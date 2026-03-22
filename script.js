@@ -1,31 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. СЛАЙДЕР КУРСІВ
+    // 1. Слайдер курсов
     const track = document.getElementById('coursesTrack');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
-    
+
     if (track && nextBtn && prevBtn) {
-        const totalSlides = 3; 
+        const totalSlides = 3;
         let currentIndex = 0;
+
         const updateSlider = () => {
             const offset = -(currentIndex * (100 / totalSlides));
             track.style.transform = `translateX(${offset}%)`;
         };
+
         nextBtn.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % totalSlides;
             updateSlider();
         });
+
         prevBtn.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
             updateSlider();
         });
     }
 
-    // 2. ФУНКЦІЇ ДЛЯ SUCCESS POP-UP
+    // 2. Success popup
     const successPopup = document.getElementById('successPopup');
-    
+
     const showSuccess = () => {
+        if (!successPopup) return;
         successPopup.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
@@ -35,32 +38,28 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     };
 
-    // Закриття Success Pop-up при кліку на кнопки або фон
     document.querySelectorAll('.close-success, .close-success-btn').forEach(btn => {
         btn.addEventListener('click', closeAllPopups);
     });
+
     if (successPopup) {
         successPopup.addEventListener('click', (e) => {
             if (e.target === successPopup) closeAllPopups();
         });
     }
 
-    // 3. ОБРОБКА ФОРМ
-    const handleFormSubmit = (formId) => {
-        const form = document.getElementById(formId);
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                this.reset(); // Очищуємо поля
-                showSuccess(); // Показуємо наш гарний попап замість alert
-            });
-        }
-    };
+    // 3. Показ success popup после возврата с submit.php
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
 
-    handleFormSubmit('mainContactForm');
-    handleFormSubmit('popupForm');
+    if (status === 'success') {
+        showSuccess();
 
-    // 4. ЛОГІКА ВІДКРИТТЯ ПОПАПУ КУРСІВ
+        const cleanUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+    }
+
+    // 4. Popup формы курса
     const coursePopup = document.getElementById('contactPopup');
     if (coursePopup) {
         const openBtns = document.querySelectorAll('.open-popup');
@@ -71,21 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
         openBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const courseName = btn.getAttribute('data-course');
-                if (popupTitle) popupTitle.innerText = `КУРС: ${courseName}`;
-                if (selectedCourseInput) selectedCourseInput.value = courseName;
+
+                if (popupTitle) {
+                    popupTitle.innerText = `KURS: ${courseName}`;
+                }
+
+                if (selectedCourseInput) {
+                    selectedCourseInput.value = courseName;
+                }
+
                 coursePopup.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
         });
 
-        if (closeBtn) closeBtn.addEventListener('click', closeAllPopups);
-        
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeAllPopups);
+        }
+
         coursePopup.addEventListener('click', (e) => {
             if (e.target === coursePopup) closeAllPopups();
         });
     }
 
-    // 5. АНІМАЦІЯ ПОЯВИ ТА ПЛАВНИЙ СКРОЛ
+    // 5. Анимация появления
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -97,34 +105,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+    // 6. Плавный скролл по якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+
+            if (!href || href === '#') {
+                return;
+            }
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            const target = document.querySelector(href);
+
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 });
+
+// 7. Мобильное меню
 const mobileMenu = document.getElementById('mobile-menu');
 const navMenu = document.getElementById('nav-menu');
 
-mobileMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    
-    // Блокуємо прокрутку сторінки при відкритому меню
-    if (navMenu.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
-});
+if (mobileMenu && navMenu) {
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
 
-// Закриваємо меню при натисканні на посилання
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     });
-});
+
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+}
