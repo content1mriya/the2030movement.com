@@ -1,0 +1,3 @@
+date_utc,form_type,name,phone,topic,message,course,ip,user_agent
+"2026-03-22 08:49:34",contact,Сергей,+3809999999999,career,Тест,,91.200.9.102,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+"2026-03-22 08:57:30",course_popup,Сергій,+380990832436,,,"Core Foundation",91.200.9.102,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
