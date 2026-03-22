@@ -57,34 +57,59 @@
 
             <div class="contacts-form-container reveal">
                 <div class="form-glass">
-                    <form action="#" id="mainContactForm">
-                        <div class="input-group">
-                            <label>WIE HEISSEN SIE?</label>
-                            <input type="text" placeholder="VOR- UND NACHNAME" required class="input-neo">
-                        </div>
-                        
-                        <div class="input-group">
-                            <label>IHRE TELEFONNUMMER</label>
-                            <input type="tel" placeholder="+49 ___ ___ __ __" required class="input-neo">
-                        </div>
-                        
-                        <div class="input-group">
-                            <label>WAS INTERESSIERT SIE?</label>
-                            <select class="input-neo select-neo">
-                                <option value="education">AUSBILDUNG & KURSE</option>
-                                <option value="career">KOOPERATION & KARRIERE</option>
-                                <option value="salon">SALON-DIENSTLEISTUNGEN</option>
-                                <option value="other">SONSTIGE ANFRAGE</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label>NACHRICHT (OPTIONAL)</label>
-                            <textarea placeholder="IHRE NACHRICHT..." rows="3" class="input-neo"></textarea>
-                        </div>
+                    <form action="submit.php" method="POST" id="mainContactForm">
+    <input type="hidden" name="form_type" value="contact">
 
-                        <button type="submit" class="btn-movement full">ANFRAGE SENDEN</button>
-                    </form>
+    <!-- Honeypot -->
+    <div style="display:none;">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="input-group">
+        <label>WIE HEISSEN SIE?</label>
+        <input
+            type="text"
+            name="name"
+            placeholder="VOR- UND NACHNAME"
+            required
+            class="input-neo"
+        >
+    </div>
+    
+    <div class="input-group">
+        <label>IHRE TELEFONNUMMER</label>
+        <input
+            type="tel"
+            name="phone"
+            placeholder="+49 ___ ___ __ __"
+            required
+            class="input-neo"
+        >
+    </div>
+    
+    <div class="input-group">
+        <label>WAS INTERESSIERT SIE?</label>
+        <select name="topic" class="input-neo select-neo">
+            <option value="education">AUSBILDUNG & KURSE</option>
+            <option value="career">KOOPERATION & KARRIERE</option>
+            <option value="salon">SALON-DIENSTLEISTUNGEN</option>
+            <option value="other">SONSTIGE ANFRAGE</option>
+        </select>
+    </div>
+    
+    <div class="input-group">
+        <label>NACHRICHT (OPTIONAL)</label>
+        <textarea
+            name="message"
+            placeholder="IHRE NACHRICHT..."
+            rows="3"
+            class="input-neo"
+        ></textarea>
+    </div>
+
+    <button type="submit" class="btn-movement full">ANFRAGE SENDEN</button>
+</form>
                 </div>
             </div>
 
